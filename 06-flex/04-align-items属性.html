@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        align-items:侧轴子元素排列方式（单行）
+        可选值：
+            flex-start：从上到下，上对齐
+            flex-end：从下到上，下对齐
+            √ center：垂直居中
+            baseline: 项目的第一行文字的基线对齐。
+            stretch（默认值）：如果子项目未设置高度或设为auto，将占满整个容器的高度。
+     -->
+     <style>
+        div {
+            width: 800px;
+            height: 400px;
+            background-color: pink;
+            display: flex;
+            /* 主轴居中 */
+            justify-content: center;
+
+            /* 侧轴居中 */
+            /* align-items: center; */
+
+            /* 侧轴拉伸，子项目未设置高度，拉伸至父元素高度 */
+            align-items: stretch;   
+
+         }
+        span {
+            width: 150px;
+            /* height: 100px; */
+            color: #fff;
+            background-color: #bfa;
+            margin: 10px;
+         }
+     </style>
+</head>
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+</body>
+</html>

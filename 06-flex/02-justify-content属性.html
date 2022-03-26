@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+         justify-content:主轴上的子元素排列方式
+            默认是行，先确定主轴
+        可选值
+            flex-start（默认值）：左对齐
+            flex-end：右对齐
+            center： 居中
+            space-between：两端对齐，项目之间的间隔都相等。
+            space-around：每个项目两侧的间隔相等。
+                        所以，项目之间的间隔比项目与边框的间隔大一倍。
+     -->
+    <style>
+    div {
+        /* width: 800px; */
+        height: 300px;
+        background-color: pink;
+        display: flex;
+        flex-direction: row;
+        /* 右对齐，顺序不变，区别于flex-direction: row-reverse */
+        /* justify-content: center; */
+
+        /* 平分剩余空间，中间是两边的2倍 */
+        /* justify-content: space-around; */
+
+        /* 两端对齐，再平分 */
+        justify-content: space-between;
+    }
+    span {
+        width: 150px;
+        height: 100px;
+        background-color: #bfa;
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+</body>
+
+</html>
