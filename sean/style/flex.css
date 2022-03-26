@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    /* 100%视窗的高度 */
+    height: 100vh;
+    display: flex;
+    /* 子元素的排列方式：垂直*/
+    flex-direction: column;
+}
+header {
+    height: 60px;
+    display: flex;
+    /* 子元素的排列方式：水平*/
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+header .logo {
+    width: 200px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+}
+header .logo .icon {
+    width: 40px;
+    height: 40px;
+}
+header .logo .icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 1;
+}
+header .logo .title {
+    flex: 1;
+    margin-left: 10px;
+}
+header .search {
+    flex: 1;
+    margin-left: 20px;
+}
+header .search input {
+    background-color: #f4f4f4;
+    border: 0;
+    outline: none;
+    padding: 10px 14px;
+    width: 300px;
+}
+header .user {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    align-items: center;
+}
+header .user .avatar {
+    width: 40px;
+    height: 40px;
+}
+header .user .avatar img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 100%;
+}
+header .user .name {
+    margin-left: 10px;
+    margin-right: 20px;
+    font-size: 16px;
+}
+header .user .logout a {
+    color: #0052d9;
+    font-size: 16px;
+}
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+main aside {
+    width: 240px;
+    border-right: 1px solid #eee;
+}
+main section {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+section .box {
+    flex: 1;
+    position: relative;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+section .box img {
+    width: 100%;
+    display: block;
+}
+section .box h2 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /* 背景颜色的透明度 */
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    /* 元素内容的透明度 */
+    opacity: 0.8;
+}

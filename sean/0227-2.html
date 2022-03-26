@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模仿Runoob</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f6f6f6;
+        }
+        header .container,
+        main .container {
+            width: 1280px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        header .container .logo {
+            width: 258px;
+            height: 40px;
+            background-color: #ddd;
+            /* 塌陷 */
+            margin-top: 42px;
+            float: left;
+        }
+        header .container .search {
+            width: 444px;
+            height: 44px;
+            /* 塌陷 */
+            margin-top: 40px;
+            margin-bottom: 40px;
+            margin-right: 10px;
+            float: right;
+        }
+        header .container .search input {
+            width: 100%;
+            font-size: 16px;
+            padding: 12px;
+            border: 0;
+            outline: none;
+            /* 很重要 */
+            box-sizing: border-box;
+            border-radius: 5px;
+            box-shadow: 0px 0px 6px #eee;
+        }
+        nav {
+            background-color: #96b97d;
+        }
+        nav ul {
+            width: 1280px;
+            margin: 0 auto;
+        }
+        nav ul::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        nav ul li {
+            list-style-type: none;
+            float: left;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px 0;
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            width: 91px;
+            /* CSS3过渡 */
+            transition: all ease-in-out 0.3s;
+            text-align: center;
+        }
+        nav ul li a:hover {
+            color: #000;
+            background-color: #fff;
+        }
+        main .container .aside {
+            width: 180px;
+            height: 800px;
+            /* background-color: #eee; */
+            float: left;
+            border: 1px solid #eee;
+        }
+        main .container .aside ul {
+            background-color: #F6F4F0;
+            border-bottom: 1px solid #fff;
+        }
+        main .container .aside ul li {
+            list-style-type: none;
+        }
+        main .container .aside ul li a {
+            display: block;
+            padding: 10px;
+            border: 1px solid #fff;
+            text-decoration: none;
+            color: #000;
+            transition: all ease-in-out 0.3s;
+            border-bottom: none;
+        }
+        main .container .aside ul li a:hover {
+            background-color: #96b97d;
+            color: #fff;
+        }
+        main .container {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        main .container .center {
+            width: 876px;
+            height: 800px;
+            background-color: #ddd;
+            float: left;
+            margin-left: 20px;
+        }
+        main .container .right {
+            width: 180px;
+            height: 800px;
+            background-color: #ccc;
+            float: right;
+        }
+        footer {
+            background-color: #f8f8f8;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png">
+            </div>
+            <div class="search">
+                <input type="text" placeholder="搜索...">
+            </div>
+        </div>
+    </header>
+    <!-- 宽度：子元素适应父元素 高度：子元素的高度影响父元素 -->
+    <!-- 屏幕尺寸 -> body -> nav -> ul -> li -->
+    <!-- 文字 -> a -> li -> ul -> nav -> body -->
+    <nav>
+        <ul>
+            <!--1280 / 14 = 91-->
+            <li><a href="05.html">Home</a></li>
+            <li><a href="05.html">Html</a></li>
+            <li><a href="05.html">CSS</a></li>
+            <li><a href="05.html">JavaScript</a></li>
+            <li><a href="05.html">Python2</a></li>
+            <li><a href="05.html">Python3</a></li>
+            <li><a href="05.html">Design</a></li>
+            <li><a href="05.html">PHP</a></li>
+            <li><a href="05.html">Go</a></li>
+            <li><a href="05.html">C++</a></li>
+            <li><a href="05.html">Swift</a></li>
+            <li><a href="05.html">Java</a></li>
+            <li><a href="05.html">SQL</a></li>
+            <li><a href="05.html">Linux</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="aside">
+                <ul>
+                    <li><a href="">HTML / CSS</a></li>
+                    <li><a href="">JavaScript</a></li>
+                    <li><a href="">服务端</a></li>
+                    <li><a href="">客户端</a></li>
+                    <li><a href="">数据库</a></li>
+                    <li><a href="">数据分析</a></li>
+                </ul>
+            </div>
+            <div class="center"></div>
+            <div class="right"></div>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>

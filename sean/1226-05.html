@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS选择器 - 组合选择器</title>
+    <style>
+        /* 后代选择器 */
+        div p {
+            color: red;
+        }
+        /* 子选择器（相邻） */
+        div > p {
+            color: #00ff00;
+        }
+        /**
+            优先级: 谁具体谁优先（规则）; 选择范围一致，谁在后谁优先
+        */
+    </style>
+</head>
+<body>
+    <p>我是一个段落(不满足)</p>
+    <div>
+        <p>我是一个段落(绿)</p>
+    </div>
+    <div id="box">
+        <p>我是一个段落(绿)</p>
+    </div>
+    <div>
+        <div>
+            <p>我是一个嵌套比较深的段落(绿)</p>
+        </div>
+    </div>
+    <div>
+        <h3>
+            <p>我是一个比较奇怪的嵌套方式(红色)</p>
+        </h3>
+    </div>
+</body>
+</html>

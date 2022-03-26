@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单</title>
+</head>
+<body>
+    <!-- id 属性值，在当前页面全局唯一 -->
+    <!-- 请求方式 GET POST -->
+    <!-- query string ?key=value&key1=value1&key2=value2 -->
+    <form method="post" action="http://wwww.a.com/login.py">
+        <div>
+            <!-- for的值要与id的值一致 -->
+            <label for="account">账号:</label>
+            <input type="text" name="account" id="account">
+        </div>
+        <div>
+            <label for="pass">密码:</label>
+            <input type="password" name="pass" id="pass">
+        </div>
+        <div>
+            <label>性别：</label>
+            <label for="male">男</label>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="female">女</label>
+            <input type="radio" name="gender" id="female" value="female">
+        </div>
+        <div>
+            <label>爱好:</label>
+            <label for="football">足球</label>
+            <input type="checkbox" name="interest" value="football" id="football">
+            <label for="basketball">篮球</label>
+            <input type="checkbox" name="interest" value="basketball" id="basketball">
+        </div>
+        <div>
+            <label for="class">所在班级</label>
+            <select name="class" id="class">
+                <option value="601">601班</option>
+                <option value="602">602班</option>
+                <option value="603">603班</option>
+                <option value="604">604班</option>
+            </select>
+        </div>
+        <div>
+            <label for="desc">个人介绍</label>
+            <textarea id="desc" name="desc" rows="10" cols="50"></textarea>
+        </div>
+        <div>
+            <button>登录</button>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航下拉效果</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            height: 200px;
+            background-color: #fff;
+        }
+        nav {
+            background-color: #a7232d;
+        }
+        nav > ul {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        nav > ul:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        nav > ul > li {
+            list-style-type: none;
+            float: left;
+            position: relative;
+        }
+        nav > ul > li > a {
+            display: block;
+            width: 120px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all ease-in 200ms;
+        }
+        nav > ul > li:hover {
+            background-color: #fff;
+        }
+        nav > ul > li:hover > a {
+            color: #a7232d;
+        }
+        nav > ul > li .sub {
+            display: none;
+            position: absolute;
+            /* bottom: 0; 这里有个疑问 */
+            left: 0;
+            background-color: #fff;
+            width: 280px;
+            padding: 15px;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+        
+        nav > ul > li:hover .sub {
+            display: block;
+        }
+        nav > ul > li .sub .icon {
+            float: left;
+            background-color: #a7232d;
+            margin-right: 20px;
+        }
+        nav > ul > li .sub .icon img {
+            display: block;
+        }
+        nav > ul > li .sub::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        nav > ul > li .sub > ul li {
+            list-style-type: none;
+        }
+        nav > ul > li .sub > ul li a {
+            display: block;
+            padding: 5px 10px;
+            color: #999;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        nav > ul > li .sub > ul li a:hover {
+            color: #a7232d;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <nav>
+        <ul>
+            <li><a href="http://www.bxait.cn">首页</a></li>
+            <li>
+                <a href="http://www.bxait.cn">学校概况</a>
+                <div class="sub">
+                    <div class="icon">
+                        <img src="images/subnav-img.png" />
+                    </div>
+                    <ul>
+                        <li><a href="http://www.bxait.cn/xxgk/xxjj/">学校简介</a></li>
+                        <li><a href="http://www.bxait.cn/xxgk/xzjy/">校长寄语</a></li>
+                        <li><a href="http://www.bxait.cn/xxgk/xxld/">学校领导</a></li>
+                        <li><a href="http://www.bxait.cn/xxgk/xxfg/">学校风光</a></li>
+                        <li><a href="http://www.bxait.cn/xxgk/xxbs/">学校标识</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="http://www.bxait.cn">组织机构</a></li>
+            <li><a href="http://www.bxait.cn">党群工作</a></li>
+            <li><a href="http://www.bxait.cn">教育教学</a></li>
+            <li><a href="http://www.bxait.cn">国际教育</a></li>
+            <li><a href="http://www.bxait.cn">校园生活</a></li>
+            <li><a href="http://www.bxait.cn">学生服务</a></li>
+            <li>
+                <a href="http://www.bxait.cn">招生就业</a>
+                <div class="sub">
+                    <div class="icon">
+                        <img src="images/subnav-img.png" />
+                    </div>
+                    <ul>
+                        <li><a href="http://www.bxait.cn/xxgk/xxjj/">学校简介</a></li>
+                        <li><a href="http://www.bxait.cn/xxgk/xzjy/">校长寄语</a></li>
+                        <li><a href="http://www.bxait.cn/xxgk/xxld/">学校领导</a></li>
+                        <li><a href="http://www.bxait.cn/xxgk/xxfg/">学校风光</a></li>
+                        <li><a href="http://www.bxait.cn/xxgk/xxbs/">学校标识</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="http://www.bxait.cn">人才招聘</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
