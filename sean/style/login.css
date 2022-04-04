@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100vh;
+    background-color: #eee;
+    display: flex;
+    /* 主轴方向是垂直的 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login {
+    background-color: #fff;
+    width: 300px;
+    padding: 80px;
+    border-radius: 3px;
+}
+.login .item {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #999;
+    margin-top: 20px;
+    align-items: center;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+.login .item:focus-within {
+    border: thin solid #000;
+    background-color: #fff;
+    box-shadow: 0px 0px 3px #ccc;
+}
+.login .item .icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+.login .item .icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.login .item input {
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    background-color: transparent;
+}
+.login button {
+    width: 100%;
+    background-color: #666;
+    color: #fff;
+    border: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* 鼠标样式 */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.login button:hover {
+    background-color: #000;
+}
