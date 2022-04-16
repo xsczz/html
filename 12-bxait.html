@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>part2</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .div {
+            box-sizing: border-box;
+        }       
+        main {
+            width: 100%;
+            /* height: 1000px; */
+            background-color: rgb(141,30,16);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        main section {
+            width: 100%;
+            height: 819px;
+            flex: 1;
+            background-color: rgb(141,30,16);
+            display: flex;
+            justify-content: center;
+        }
+        main section .container {
+            width: 1200px;
+            height: 470px;
+            /* border-top: 5px solid #bfa;
+            border-bottom: 5px solid #bfa; */
+            background-color: #fff;
+        } 
+        main section .container .title h3 {
+            height: 54px;
+        }
+        /* main section .container:nth-child(2) {
+            border-top: 5px solid #bfa;
+            border-bottom: 5px solid #bfa;
+        } */
+        main section .container .title {
+            width: 100%;
+            height: 89.2px;
+            background-color: rgb(141,30,16);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 0px 40px;
+            color: #fff;
+        }
+        main section .nav-common {
+            flex: 1;
+            /* 指定高度后边框长度可 */
+            height: 350px;
+        }
+        main section .container .nav-common {
+            display: flex;
+        }
+        main section .nav-common .nav-items {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        main section .nav-common .nav-items a {
+            flex: 1;
+            text-align: center;
+            color: #000;
+            text-decoration: none;
+            font-size: 16px;
+            border-bottom: 10px solid rgb(141,30,16);
+        }
+        /* main section .nav-common .nav-items a:nth-child(1) {
+            border-bottom: 1px solid #fff ;
+        } */
+        main section .nav-common .nav-items:nth-child(2) {
+            border-right: 10px solid rgb(141,30,16);
+        }
+    </style>
+</head>
+<body>  
+    <main>
+        <section>
+            <div class="container">
+                <div class="title">
+                    <h3>新闻动态</h3>
+                    <span>忆往昔，桃李不言，自有风雨话沧桑；看今朝，鹿鸣于野，更续诗篇誉三秦！</span>
+                </div>
+                <div class="nav-common">
+                    <div class="nav-items">
+                        <a href="#">根据.....</a>
+                    </div>
+                    <div class="nav-items">
+                        <a href="#">春风十里 健康相伴</a>
+                        <a href="#">“疫”起奋发 唯原长安</a>
+                    </div>
+                    <div class="nav-items">
+                        <a href="#">大赛绽光彩</a>
+                        <a href="#">商学院</a>
+                        <a href="#">校企合作</a>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <section>2
+            <div class="container">
+                b
+            </div>
+        </section>
+        <section>3
+            <div class="container">
+                c
+            </div>
+        </section>
+        <section>4
+            <div class="container">
+                d
+            </div>
+        </section>
+        <section>5
+            <div class="container">
+                e
+            </div>
+        </section>
+    </main>
+</body>
+</html>
