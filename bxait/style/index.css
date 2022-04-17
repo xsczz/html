@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;   
+}
+a {
+    text-decoration: none;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+header .container {
+    display: flex;
+    flex-direction: row;
+    width: 1200px;
+    justify-content: space-between;
+}
+header .container .logo {
+    width: 400px;
+    height: 120px;
+    /* 指定背景颜色 */
+    /* background-color: blueviolet; */
+    /* 指定背景图片 */
+    background-image: url(../images/logo.png);
+    /* 指定背景图片的填充方式 */
+    background-repeat: no-repeat;
+    /* 指定背景图片的位置 */
+    background-position: -100px -15px;
+}
+header .container .logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+header .container .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+header .container .menu ul {
+    display: flex;
+}
+header .container .menu ul li {
+    list-style-type: none;
+}
+header .container .menu ul li a {
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    color: #333333;
+    transition: all ease-in 0.3s;
+}
+header .container .menu ul li a:hover {
+    color: rgb(141,30,16);
+}
+nav {
+    background-color: rgb(141,30,16);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+nav ul {
+    width: 1200px;
+    display: flex;
+}
+nav ul li {
+    flex: 1;
+    list-style-type: none;
+}
+nav ul li a {
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+    color: #ffffff;
+    transition: all ease-in-out 0.3s;
+}
+nav ul li a:hover {
+    background-color: #ffffff;
+    color: rgb(141,30,16);
+}
+.banner {
+    background-color: rgb(141,30,16);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.banner .container {
+    width: 1200px;
+}
+.banner .container  img {
+    width: 100%;
+    display: block;
+}
