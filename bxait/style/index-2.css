@@ -458,9 +458,17 @@ nav ul li a:hover {
     flex: 1;
     background-color: #ffffff;
     padding: 20px;
+    margin-top: 140px;
+    position: relative;
+    border-radius: 20px;
 }
 .campus .bottom .item .image {
+    position: absolute;
+    top: -130px;
+    left: 0;
     width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 }
 .campus .bottom .item .image img {
     width: 100%;
@@ -470,8 +478,8 @@ nav ul li a:hover {
     margin-right: 20px;
 }
 .campus .bottom .item h2 {
-    padding-top: 50px;
-    padding-bottom: 40px;
+    padding-top: 100px;
+    padding-bottom: 20px;
 }
 .campus .bottom .item .button {
     display: flex;
