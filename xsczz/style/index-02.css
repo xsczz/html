@@ -48,11 +48,12 @@ nav {
 nav ul {
     width: 1200px;
     display: flex;
+    justify-content: space-between;
 }
 nav ul a {
     display: block;
     font-size: 16px;
-    padding: 20px 25px;
+    padding: 20px 28px;
     text-align: center;
     color: #fff;
 }
@@ -61,92 +62,179 @@ nav ul a:hover {
     background-color: #fff;
     transition: all ease-in-out 0.3s;
 }
+.focus {
+    background-color: rgb(141,30,16);
+    display: flex;
+    justify-content: center;
+}
+.focus .container {
+    width: 1200px;
+}
 .focus .container img {
     width: 100%;
     display: block;
 }
-.box {
-    /* height: 709px; */
-    display: block;
-    border-top: 5px #aaa solid;
-    background: url(../img/bxait-05.png) -10px -10px;
+.tab {
     display: flex;
     justify-content: center;
+    background: url(../img/bxait-02.png) no-repeat;
+    background-size: cover;
+
 }
-.box .container {
+.tab .news {
+    width: 1200px;
+}
+.tab .news .title {
+    color: #fff;
+    text-align: center;
+}
+.tab .news .title h2 {
+    padding: 40px 0px 40px 0px;
+
+}
+.tab .news .title p {
+    padding-bottom: 40px;
+}
+.tab .news .content {
     width: 1200px;
     background-color: #fff;
-}
-.box .title {
-    width: 1200px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #fff;
-    background-color: rgb(141,30,16);
-    padding: 60px 0 40px 0;
+    margin-bottom: 100px;
 }
- .box .box-common {
-    display: flex;
-}
-.box .box-common .box-items {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-.box-items:nth-child(2) {
-    border-right: 5px solid rgb(141,30,16);
-}
-.box .box-common .img {
-    width: 400px;
-    height: 470px;
-    background: url(../img/bxait-02.1.png);
-    display: flex;
-    justify-content: center;
+.tab .news .content .left {
+    width: 368px;
+    /* height: 500px; */
+    background-image: url(../img/news-02.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -140px 0;
     position: relative;
 }
-.box .box-common .box-items .list {
-    flex: 1;
-    border-bottom: 5px solid rgb(141,30,16);
-}  
-.box .box-common .img .content {
-    width: 342px;
-    background-color: rgb(250, 243, 243, .5);
+.tab .news .content .left .info {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 14px;
     position: absolute;
-    top: 65%;
+    top: 340px;
+    left: 10px;
+    right: 10px;
     display: flex;
+    align-items: center;
 }
-.box .box-common .img .content .text {
-    padding: 25px;
+.tab .news .content .left .info .desc {
+    flex: 1;
 }
-.box .box-common .img .content .right {
-    width: 100px;
-    height: 100px;
+.tab .news .content .left .info .arrow {
+    width: 40px;
+    height: 40px;
     background: url(../img/right.svg) no-repeat;
-    color: #666666;
     background-size: contain;
-    margin-top: 65px;
+    margin-left: 10px;
 }
-.box-items .list .text {
-    padding: 25px;
+.tab .news .content .left .info .arrow a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: rgba(0, 0, 0, 0);
 }
-.box-items .list .text p {
-    text-indent: 30px;
-    color: #666666;
+.tab .news .content .center,
+.tab .news .content .right {
+    flex: 1;
 }
-.box-items .list .bottom .cont {
-    padding: 25px;
-    margin-top: 15px;
+.content .center {
     display: flex;
+    flex-direction: column;
+}
+.content .center .item {
+    flex: 1;
+    padding: 16px;
+}
+.content .center .item:nth-child(2){
+    border-top: 5px solid rgb(141,30,16);
+}
+.content .right .item {
+    border-left: 5px solid rgb(141,30,16);
+}
+.content .right .item:nth-child(2){
+    border-top: 5px solid rgb(141,30,16);
+    border-bottom: 5px solid rgb(141,30,16);
+}
+.content .center .item h3 {
+    margin-bottom: 14px;
+}
+.content .center .item .more {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    color: rgb(141,30,16);
+    margin-top: 10px;
+    text-align: center;
+    border-top: 1px solid #eee;
 }
-.box-items .list .bottom .cont p {
-    font-size: 25px;
+.content .center .item .more .date {
+    color: rgb(207, 67, 66);
+    margin-top: 10px;
+    
 }
-.box-items .list .bottom .part2 {
-    width: 45px;
-    height: 45px;
+.content .center .item .more .date h3 {
+    font-size: 24px;
+}
+.content .center .item .more .arrow {
+    width: 40px;
+    height: 40px;
     background: url(../img/right.svg) no-repeat;
     background-size: contain;
+    background-position: center center;
+    margin-left: 10px;
+}
+.content .center .item .more .arrow a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: rgba(0, 0, 0, 0);
+}
+.content .center .item:hover {
+    color: #fff;
+    box-shadow: 0 6px 11px 0 rgb(0 0 0 / 5%);
+    transform: scale(1.005);
+    background-color: #cf4342;
+}
+.content .right {
+    display: flex;
+    flex-direction: column;
+}
+.content .right .item {
+    flex: 1;
+    display: flex;
+}
+.content .right .item .date {
+    padding: 24px;
+    border-right: 1px solid #eee;
+    text-align: center;
+    color: rgb(207, 67, 66);
+}
+
+.content .right .item .date h3 span{
+    display: inline-block;
+    border-bottom: 1px solid #eee;
+    padding: 5px;
+    font-size: 24px;
+}
+.content .right .item .date p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+.content .right .item .info {
+    padding: 15px;
+}
+.content .right .item .info .arrow {
+    width: 40px;
+    height: 40px;
+    background: url(../img/right.svg) no-repeat;
+    background-size: contain;
+   
+} 
+.content .right .item .info .arrow a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: rgba(0, 0, 0, 0);
 }
