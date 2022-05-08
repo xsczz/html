@@ -1,0 +1,26 @@
+main .content {
+    width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+main .content h1 {
+    text-align: center;
+    /* line-height: 4; */
+    padding: 40px 0;
+}
+main .content .desc p {
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    color: #aaa;
+}
+main .content .article p {
+    padding: 10px 0;
+    line-height: 1.5;
+    text-indent: 2em;
+}
+main .content .article-image {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}

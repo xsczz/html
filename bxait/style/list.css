@@ -1,0 +1,102 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main .title {
+    width: 1200px;
+    display: flex;
+    padding: 50px 0;
+}
+main .title .left,
+main .title .right {
+    flex: 1;
+    position: relative;
+}
+main .title h1 {
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 30px;
+    font-weight: 500;
+}
+main .title .left::before,
+main .title .right::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 16px;
+    border: 1px solid rgb(141, 30, 16);
+}
+main .title .left::after,
+main .title .right::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 1px;
+    background-color: rgb(141, 30, 16);
+}
+main .title .left::before {
+    position: absolute;
+    right: 100px;
+    top: calc(50% - 7px);
+}
+main .title .left::after {
+    position: absolute;
+    right: 0px;
+    top: calc(50% - 0.5px);
+}
+main .title .right::before {
+    position: absolute;
+    left: 100px;
+    top: calc(50% - 7px);
+}
+main .title .right::after {
+    position: absolute;
+    left: 0px;
+    top: calc(50% - 0.5px);
+}
+main .list {
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+}
+main .list li {
+    list-style-type: none;
+    width: calc(33.3333333% - 10px);
+    margin-bottom: 20px;
+}
+/*3n - 1*/
+main .list li:nth-child(2), 
+main .list li:nth-child(5),
+main .list li:nth-child(8),
+main .list li:nth-child(11) {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+main .list li .photo {
+    width: 100%;
+}
+main .list li .photo img {
+    width: 100%;
+}
+main .list li h2 {
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px 0;
+}
+main .list li p {
+    font-size: 14px;
+    color: #999;
+}
+main .list li .link {
+    padding: 18px 0;
+}
+main .list li .link a {
+    display: inline-block;
+    padding: 8px 20px;
+    font-size: 14px;
+    color: rgb(141, 30, 16);
+    border: 1px solid rgb(141, 30, 16);
+    border-radius: 20px;
+}
