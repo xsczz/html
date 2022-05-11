@@ -11,6 +11,7 @@ a {
 header {
     display: flex;
     justify-content: center;
+    /* 这里有一个问题：开启固定定位后背景颜色透明 */
 }
 header .container {
     width: 1200px; 
@@ -383,6 +384,12 @@ nav ul a:hover {
     background: url(../img/topic-6.jpeg) no-repeat;
     background-size: cover;
 }
+.part3 .topic .content .item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: rgba(0, 0, 0, 0)
+}
 .part4 { 
     display: flex;
     justify-content: center;
@@ -504,6 +511,15 @@ nav ul a:hover {
     display: block;
     box-sizing: border-box;
 }
+.part4 .campus .content .top .left .item a,
+.part4 .campus .content .top .center .item a,
+.part4 .campus .content .top .right .item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: rgba(0, 0, 0, 0);
+}
+
 .part4 .campus .content .bottom {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -552,6 +568,7 @@ nav ul a:hover {
     height: 100%;
     color: rgba(0, 0, 0, 0);
 }
+
 .part5 {
     display: flex;
     justify-content: center;
