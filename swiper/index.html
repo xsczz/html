@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .swiper {
+            margin-left: 100px;
+            margin-top: 100px;
+            width: 800px;
+            position: relative;
+        }
+        .swiper > .item {
+            width: 800px;
+            height: 440px;
+            overflow: hidden;
+            opacity: 0;
+        }
+        .swiper .item img {
+            display: block;
+            width: 100%;
+            overflow: hidden;
+        }
+        .swiper .action {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+        .swiper .action li {
+            width: 20px;
+            height: 5px;
+            background-color: #fff;
+            list-style: none;
+            margin-left: 5px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        .swiper .action li.active {
+            width: 40px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper">
+        <div class="item"><img src="./images/001.jpeg"></div>
+        <div class="item"><img src="./images/002.jpeg"></div>
+        <div class="item"><img src="./images/003.jpeg"></div>
+        <div class="item"><img src="./images/004.jpeg"></div>
+    </div>
+    <script>
+        let swiper = document.querySelector('.swiper')
+        let item = document.querySelectorAll('.swiper > .item')
+        let length = item.length
+
+        let action = document.createElement('ul')
+        action.className = 'action'
+
+        for (i = 0; i < length; i++) {
+            let actionItem = document.createElement('li')
+            actionItem.dataset.index = i
+            actionItem.className = 'item'
+            action.appendChild(actionItem)
+            if (i == 0) {
+                actionItem.className = 'item active'
+                item[i].style.display = 'block'
+                item[i].style.opacity = 1
+            } else {
+                actionItem.className = 'item'
+                item[i].style.display = 'none'
+                item[i].style.opacity = 0
+            }
+
+            actionItem.addEventListener('click', (e) => {
+                let index = parseInt(actionItem.dataset.index)
+                let actionItems = document.querySelectorAll('.action > .item')
+
+                for (n = 0; n < length; n++) {
+                    if (n == index) {
+                        item[n].style.display = 'block'
+                        actionItems[n].className = 'item active'
+                        item[n].style.opacity = 1
+                    } else {
+                        item[n].style.display = 'none'
+                        actionItems[n].className = 'item'
+                        item[n].style.opacity = 0
+                    }
+                }
+            })
+        }
+
+        swiper.appendChild(action)
+    </script>
+</body>
+</html>

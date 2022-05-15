@@ -312,7 +312,8 @@ main .p2 .container .right .right-list li .list-btn {
   display: flex;
 }
 main .p2 .container .right .right-list li .list-btn .inner {
-  display: inline-block; 
+  display: inline-block;
+  margin-right: 8px;
 }
 main .p2 .container .right .right-list li .list-btn .inner a {
    color: #98A3B7;
