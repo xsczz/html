@@ -1,0 +1,393 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+nav {
+  width: 100%;
+  background-color: #F1F2F5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #DDDEE1;
+}
+
+nav .left {
+  margin-left: 20px;
+}
+nav .left, 
+nav .right {
+  display: flex;
+  align-items: center;
+}
+nav .left .logo {
+  margin-right: 20px;
+}
+nav .left ul,
+nav .right ul {
+  display: flex;
+}
+nav .left ul li a,
+nav .right ul li a {
+  display: block;
+  padding: 20px 13px;
+  color: #16181a;
+  font-size: 14px;
+}
+nav .left ul li a:hover {
+  color: #0052D9;
+}
+nav .right .search {
+  padding: 21px;
+  background-color: #fff;
+  margin-left: 60px;
+  margin-right: 5px;
+}
+nav .right .search:hover {
+  background-color: #DDDEE1;
+}
+nav .right .search .icon {
+  width: 18px;
+  height: 18px;
+}
+nav .right .search .icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+nav .right .undernea {
+  display: flex;
+  align-items: center;
+}
+nav .right .endernea:hover {
+  color: #0052D9;
+  /* 问题：没反应 */
+}
+nav .right .undernea .left {
+  margin-right: 5px;
+}
+nav .right .undernea p {
+  margin: 0px 5px;
+}
+nav .right .undernea .right {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+nav .right .button {
+  margin-left: 5px;
+  padding: 20px 25px;
+  background-color: #0052D9;
+}
+nav .right .button a {
+  color: #fff;
+}
+main {
+  width: 100%;
+  background-color: #F4F5F9;
+}
+/* 问题：p1在没有背景图片的情况下怎么添加超链接 */
+main .p1 {
+  display: flex;
+  margin: 0px 45px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+main .p1 .left {
+  flex: 1;
+  margin-top: 80px;
+}
+main .p1 .left .top h1 {
+  font-size: 42px;
+  font-weight: 400;
+  color: #000;
+} 
+main .p1 .left .top p {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: #3d485d;
+  font-size: 16px;
+}
+main .p1 .left .top .button {
+  margin-top: 50px;
+  margin-bottom: 125px;
+}
+main .p1 .left .top .button a {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #0052D9;
+  color: #fff;
+  transition: all ease-in-out 0.3ms;
+}
+main .p1 .left .top .button a:hover {
+  background-color: #2670e8;
+}
+main .p1 .left .bottom {
+  display: flex;
+}
+main .p1 .left .bottom .item {
+  flex: 1;
+  padding: 18px;
+  background-color: #FAFBFC;
+  border: 2px solid #fff;
+  border-radius:4px;
+  box-sizing: border-box;
+}
+main .p1 .left .bottom .item:nth-child(2) {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+main .p1 .left .bottom .item .title {
+  display: flex;
+}
+main .p1 .left .bottom .item p {
+  font-size: 14px;
+  margin-top: 8px;
+  color: #9FAABC;
+}
+main .p1 .left .bottom .item .title img {
+  width: 24px;
+  height: 24px;
+  display: block;
+  margin-right: 8px;
+}
+main .p1 .left .bottom .item .title a {
+  display: block;
+  font-weight: 400;
+  font-size: 18px;
+  color: #000;
+  transition: all ease-in-out 0.3ms;
+}
+main .p1 .left .bottom .item .title a:hover {
+  color: #0052D9;
+}
+main .p1 .right img {
+  display: block;
+  width: 690px;
+}
+main .p2 {
+  background-color: #fff;
+}
+main .p2 .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+main .p2 .title h1 {
+  font-weight: 400;
+  margin-top: 50px;
+}
+main .p2 .title .text {
+  display: flex;
+}
+main .p2 .title .text p {
+  color: #9FAABC;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+main .p2 .title .text a {
+  display: block;
+  margin: 20px 0px 0px 10px;
+}
+main .p2 .container .top {
+  padding: 45px 45px 0px 45px;
+  text-align: center;
+}
+main .p2 .container .bottom {
+  padding: 20px 45px 0px 45px;
+  text-align: center;
+}
+main .p2 .container .top .product,
+main .p2 .container .bottom .product {
+  display: flex;
+}
+main .p2 .container .top .product li,
+main .p2 .container .bottom .product li {
+  /* width: calc(1.4%-20px); */
+  flex: 1;
+  padding: 0px 20px 20px;
+}
+main .p2 .container .top .product .sub,
+main .p2 .container .bottom .product .sub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .p2 .container .top .product .sub .icon,
+main .p2 .container .bottom .product .sub .icon {
+  width: 70px;
+  height: 70px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-position: center center;
+  margin-bottom: 8px;
+} 
+main .p2 .container .top .product .sub .icon img,
+main .p2 .container .bottom .product .sub .icon img  {
+  width: 100%;
+}
+main .p2 .container .center {
+  padding:  0px 0px 45px 45px;
+  background-color: #F1F4F7;
+  padding-top: 40px;
+  display: flex;
+}
+main .p2 .container .center .left {
+  display: flex;
+  flex-direction: column;
+  display: inline-block;
+  margin-right: 45px;
+}
+main .p2 .container .center .left:nth-child(1) {
+  /* margin-bottom: 20px; */
+  /* 问题 !!!两个item距离？？ */
+}
+main .p2 .container .center .left .item {
+  background-color: #EEF1F6;
+  border: 2px solid #E9EEF5;
+  padding: 24px;
+  box-shadow: 8px 8px 20px 0 rgb(55 99 170 / 10%), -8px -8px 20px 0 #fff;
+  border-radius: 4px;
+}
+
+main .p2 .container .center .left .item .center-title h3 {
+  font-weight: 400;
+  font-size: 20px;
+}
+main .p2 .container .center .left .item .center-title p {
+  margin: 10px 0px 10px 0px;
+  color: #3D485D;
+}
+main .p2 .container .center .left .item .item-sub {
+  display: flex;
+  /* !!!转为行内块达到btn之间有间距 */
+  display: inline-block;
+}
+main .p2 .container .center .left .item .item-sub .button {
+  padding: 12px 40px;
+  margin-top: 10px;
+  background-color: #fff;
+  display: inline-block;
+}
+main .p2 .container .center .left .item .item-sub .button a {
+  color: #606469;
+}
+/* main .p2 .container .center .left .item .item-sub:nth-child(1) {
+  margin-right: 20px;
+} */
+main .p2 .container .right {
+  flex: 2;
+}
+main .p2 .container .right .right-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+main .p2 .container .right .right-list li {
+  width: 20%;
+  padding: 15px 25px;
+  display: inline-block;
+}
+main .p2 .container .right .right-list li h4 {
+  font-weight: 400;
+  font-size: 16px;
+}
+main .p2 .container .right .right-list li p {
+  font-size: 14px;
+  margin: 8px 0px;
+}
+main .p2 .container .right .right-list li .list-btn {
+  display: flex;
+}
+main .p2 .container .right .right-list li .list-btn .inner {
+  display: inline-block; 
+}
+main .p2 .container .right .right-list li .list-btn .inner a {
+   color: #98A3B7;
+}
+/* 问题 没反应 */
+/* main .p2 .container .right .right-list li .list-btn:nth-child(2) {
+  margin-left: 10px;
+} */
+main .p2 .container .right .right-list li .list-btn a {
+  display: inline-block;
+  font-size: 12px;
+  padding: 5px 8px;
+  border: 1px solid #C8D1DD;
+  border-radius: 3px;
+}
+.p3 {
+  background-color: #242933;
+  padding-bottom: 60px;
+}
+.p3 .p3-title {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+.p3 .p3-title h1 {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  font-size: 28px;
+  font-weight: 400;
+}
+.p3 .p3-content {
+  display: flex;
+}
+/* .p3 .p3-content .content-left,
+.p3 .p3-content .content-center,
+.p3 .p3-content .content-bottom {
+  flex: 1;
+} */
+.p3 .p3-content .content-left .p3-list,
+.p3 .p3-content .content-right .p3-list {
+  display: flex;
+  margin: 0px 0px 20px 20px;
+  flex-wrap: wrap;
+}
+.p3 .p3-content .content-left .p3-list:nth-child(2) {
+  /* margin-left: 10px; */
+}
+.p3 .p3-content .content-left .p3-list li,
+.p3 .p3-content .content-right .p3-list li {
+  padding: 35px 25px;
+  border: 1px solid rgb(41, 39, 39);
+  box-shadow: 8px 8px 20px 0 rgb(18 21 26 / 60%), -8px -8px 20px 0 rgb(54 62 77 / 50%), inset 0 4px 20px 0 rgb(36 41 51 / 50%);
+  border-radius: 4px;
+}
+.p3 .p3-content .content-left .p3-list li .icon,
+.p3 .p3-content .content-right .p3-list li .icon {
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-bottom: 8px;
+}
+.p3 .p3-content .content-left .p3-list li .icon img,
+.p3 .p3-content .content-right .p3-list li .icon img {
+  display: block;
+  width: 100%;
+}
+.p3 .p3-content .content-left .p3-list li h4,
+.p3 .p3-content .content-right .p3-list li h4 {
+  margin-bottom: 8px;
+  color: #FFFFFF;
+}
+.p3 .p3-content .content-left .p3-list li p,
+.p3 .p3-content .content-right .p3-list li p {
+  line-height: 25px;
+  color: #FFFFFF;
+}
