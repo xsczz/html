@@ -313,15 +313,15 @@ main .p2 .container .right .right-list li .list-btn {
 }
 main .p2 .container .right .right-list li .list-btn .inner {
   display: inline-block;
-  margin-right: 8px;
 }
 main .p2 .container .right .right-list li .list-btn .inner a {
    color: #98A3B7;
 }
 /* 问题 没反应 */
-/* main .p2 .container .right .right-list li .list-btn:nth-child(2) {
+main .p2 .container .right .right-list li .list-btn .inner:nth-child(2),
+main .p2 .container .right .right-list li .list-btn .inner:nth-child(3) {
   margin-left: 10px;
-} */
+}
 main .p2 .container .right .right-list li .list-btn a {
   display: inline-block;
   font-size: 12px;
