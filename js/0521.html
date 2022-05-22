@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM</title>
+    <style>
+        .container .item {
+            padding: 30px;
+            background-color: #eee;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div>这是一个div1</div>
+    <div>这是一个div2</div>
+    <div>这是一个div3</div>
+    <div>这是一个div4</div>
+    <div>这是一个div5</div>
+    <div>这是一个div6</div>
+    <div id="ele">这是一个div7</div>
+    <div class="ele">这是一个div8</div>
+    <div class="ele">这是一个div9</div>
+    <div class="container">
+        <div class="item">这是一个嵌套的div1</div>
+    </div>
+    <div class="area">
+        <div class="item">这是一个嵌套的div2</div>
+    </div>
+    <div class="area">
+        <div class="item">这是一个嵌套的div3</div>
+    </div>
+    <div class="area">
+        <div class="item">这是一个嵌套的div4</div>
+    </div>
+
+    <script>
+
+        /**
+         * 1. js DOM: HTML DOM 、CSS DOM
+         * 2. js 查找元素
+         * 3. 创建元素 将创建的元素追加到具体元素中
+         * 4. 自学一下js事件
+         */
+
+        // 通过标签名称查找元素
+        var eleTagName = document.getElementsByTagName('div');
+        var length = eleTagName.length;
+        console.log('length', length);
+
+        // 通过ID查找元素
+        var eleIdName = document.getElementById('ele');
+        console.log(eleIdName);
+
+        // 通过类名称查找元素
+        var eleClassName = document.getElementsByClassName('ele');
+        console.log(eleClassName[0]);
+
+        // 嵌套的元素 => 原来的方式去查找 分开写法
+        var container = document.getElementsByClassName('container');
+        var item = container[0].getElementsByClassName('item');
+        console.log('分开来的写法', item[0]);
+
+        // 嵌套的元素 => 原来的方式去查找 合在一起
+        var item = document.getElementsByClassName('container')[0].getElementsByClassName('item')[0];
+        console.log('合起来的写法', item);
+
+        // 通过CSS选择器来查找元素 高级用法 querySelector
+        var item = document.querySelector('.container > .item');
+        item.style.backgroundColor = '#f00';
+        item.style.width = '400px';
+        item.style.height = '200px';
+
+        // JS事件
+        item.addEventListener('click', function() {
+            item.style.backgroundColor = '#0f0';
+        });
+
+        // 通过CSS选择器来查找元素 高级用法 querySelectorAll
+        var itemAll = document.querySelectorAll('.area > .item');
+        var length = itemAll.length;
+
+        // DOM CSS
+        for (i = 0; i < length; i++) {
+            console.log('area item', itemAll);
+            itemAll[i].style.width = '200px';
+            itemAll[i].style.height = '200px';
+            itemAll[i].style.paddingLeft = '50px';
+            itemAll[i].style.paddingRight = '50px';
+            if (i == 0) {
+                itemAll[i].style.backgroundColor = '#0f0';
+            } else {
+                itemAll[i].style.backgroundColor = '#f00';
+            }
+        }
+
+        // 创建一个元素
+        var box = document.createElement('div');
+        box.className = 'box';
+    
+        var boxItem = document.createElement('div');
+        boxItem.className = 'item';
+        box.appendChild(boxItem);
+        document.body.appendChild(box);
+        // body -> box -> item
+    </script>
+</body>
+</html>

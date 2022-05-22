@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态实现一个导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #000;
+        }
+        nav ul li {
+            list-style-type: none;
+        }
+        nav ul li a {
+            display: block;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // var data = ['首页', 'HTML', 'CSS', 'JS', 'PHP', 'GO', 'Python', 'MySQL'];
+
+        // 数组对象
+        var data = [
+            {
+                name: '首页',
+                link: 'http://www.baidu.com/css'
+            },
+            {
+                name: 'HTML',
+                link: 'http://www.baidu.com/'
+            },
+            {
+                name: 'CSS',
+                link: 'http://www.baidu.com'
+            },
+            {
+                name: 'JS',
+                link: 'http://www.baidu.com'
+            },
+            {
+                name: 'PHP',
+                link: 'http://www.baidu.com'
+            },
+            {
+                name: 'GO',
+                link: 'http://www.baidu.com'
+            },
+            {
+                name: 'Python',
+                link: 'http://www.baidu.com'
+            },
+            {
+                name: 'MySQL',
+                link: 'http://www.baidu.com'
+            },
+        ];
+
+        var nav = document.createElement('nav');
+        var ulEle = document.createElement('ul');
+        nav.appendChild(ulEle);
+
+        var length = data.length;
+
+        for (i = 0; i < length; i++) {
+            var liEle = document.createElement('li');
+            var link = document.createElement('a');
+            link.innerText = data[i].name;
+            link.href = data[i].link;
+            liEle.appendChild(link);
+            ulEle.appendChild(liEle);
+        }
+
+        document.body.appendChild(nav);
+
+        var button = document.createElement('button');
+        button.innerText = '改变方向';
+
+        // bool
+        var direction = false;
+
+        // 给按钮绑定点击事件
+        // 两个比较难理解的概念：回调函数（匿名）、原型链
+        button.addEventListener('click', function() {
+            if (direction == false) {
+                direction = true;
+                ulEle.style.display = 'flex';
+            } else {
+                direction = false;
+                ulEle.style.display = 'block';
+            }
+        });
+        document.body.appendChild(button);
+    </script>
+</body>
+</html>
