@@ -309,10 +309,13 @@ main .p2 .container .right .right-list li .list-btn {
 }
 main .p2 .container .right .right-list li .list-btn .inner {
   display: inline-block;
-  margin-right: 8px;
 }
 main .p2 .container .right .right-list li .list-btn .inner a {
    color: #98A3B7;
+}
+main .p2 .container .right .right-list li .list-btn .inner:nth-child(2),
+main .p2 .container .right .right-list li .list-btn .inner:nth-child(3) {
+  margin-left: 10px;
 }
 main .p2 .container .right .right-list li .list-btn a {
   display: inline-block;
@@ -686,7 +689,6 @@ main .p2 .container .right .right-list li .list-btn a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: ;
 }
 .p5 .p5-bottom .p5-bottom-list li {
   display: block;
@@ -740,7 +742,6 @@ main .p2 .container .right .right-list li .list-btn a {
   display: block;
   width: 100%;
 }
-
 .p6 .p6-content .p6-bottom {
   display: flex;
   border: 2px solid #fff;
