@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.login {
+    background-color: #fff;
+    padding: 80px 80px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #eee;
+}
+.login .item {
+    display: flex;
+    align-items: center;
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 26px;
+    transition: all 0.5s ease-in;
+}
+.login .item:focus-within {
+    border: thin solid #0052d9;
+    box-shadow: 0 0 3px #ccc;
+    background-color: #fff;
+}
+.login .item .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+.login .item .icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #666;
+}
+.login .item .content input {
+    border: 0;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0);
+    outline: none;
+    width: 240px;
+    transition: all 0.5s ease-in-out;
+}
+.login .button {
+    padding-top: 10px;
+}
+.login .button button {
+    background-color: #0052d9;
+    color: #fff;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 4px;
+    border: 0px;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.login .button button:hover {
+    background-color: #0035b5;
+    box-shadow: 0 0 3px #0035b5;
+}
