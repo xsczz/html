@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            padding: 100px;
+        }
+        .swiper {
+            width: 800px;
+            height: 440px;
+            position: relative;
+        }
+        .swiper > .item {
+            width: 800px;
+            height: 440px;
+            overflow: hidden;
+            display: none;
+        }
+        .swiper > .item.active {
+            display: block;
+        }
+        .swiper > .item img {
+            width: 100%;
+            display: block;
+        }
+        .swiper .action {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+        .swiper .action li {
+            width: 20px;
+            height: 5px;
+            background-color: #fff;
+            list-style: none;
+            margin-left: 5px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        .swiper .action li.active {
+            width: 40px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper">
+        <div class="item"><img src="./images/001.jpeg"></div>
+        <div class="item"><img src="./images/002.jpeg"></div>
+        <div class="item"><img src="./images/003.jpeg"></div>
+        <div class="item"><img src="./images/004.jpeg"></div>
+    </div>
+    <script>
+        // 通过JS DOM 查找className = .swiper 的第一个元素
+        var swiper = document.querySelector('.swiper');
+        // 通过JS DOM 查找className = .swiper > .item 的所有元素
+        var items = document.querySelectorAll('.swiper > .item');
+        // 获取item的个数
+        var length = items.length;
+
+        // 通过JS DOM 创建一个ul 元素，并且给它设置了className 属性 = action
+        var action = document.createElement('ul');
+        action.className = 'action';
+        
+        // 根据item的个数循环动态创建li元素
+        for (var i = 0; i < length; i++) {
+            var button = document.createElement('li');
+
+            // 找到第一个元素并且通过改变class name 的方式来让它显示出来
+            if (i == 0) {
+                items[0].className = 'item active';
+                button.className = 'active';
+            }
+
+            // 给每一个li元素设置了 data-index 属性，来区分具体是哪个li元素
+            button.dataset.index = i;
+            action.appendChild(button);
+
+            // 给每一个li元素绑定 click 事件
+            button.addEventListener('click', function(event) {
+                // 找到当前点击这个li元素的 data-index 的值并进行数据类型转换
+                var index = parseInt(event.target.dataset.index);
+                var actions = document.querySelectorAll('.swiper > .action > li');
+
+                // 将等于当前元素的 class name 设置为 active ，其他的设置为默认
+                for (var n = 0; n < items.length; n++) {
+                    if (index == n) {
+                        items[n].className = 'item active';
+                        actions[n].className = 'active';
+                    } else {
+                        items[n].className = 'item';
+                        actions[n].className = '';
+                    }
+                }
+            });
+        }
+
+        swiper.appendChild(action);
+
+        // 另外一个例子
+        document.body.addEventListener('click', function(event) {
+            console.log(event);
+            console.log('x', event.offsetX);
+            console.log('y', event.offsetY);
+
+            var x = event.offsetX;
+            var y = event.offsetY;
+            var box = document.createElement('div');
+
+            box.style.width = '100px';
+            box.style.height = '100px';
+            box.style.backgroundColor = '#f00';
+            box.style.position = 'absolute';
+            box.style.left = x + 'px';
+            box.style.top = y + 'px';
+
+            document.body.appendChild(box);
+        });
+
+    </script>
+</body>
+</html>
