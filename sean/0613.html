@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="img-list"></div>
+    <script>
+        // 给字符串追加字符串
+        // ('.img-list').appendChild('.list')
+
+        // 通过类名找到元素
+        // 通过document对象下的querySelector函数来查找一个 html 元素，函数的参数是 css 选机器名称
+        var imgList = document.querySelector('.img-list')
+
+        // 这个是什么？html 中 div 元素
+        var div = document.createElement('div')
+        // 给div这个对象设置style属性，同时设置style属性下的width属性 并赋值 '100px'
+        div.style.width = '100px'
+        div.style.height = '100px'
+        div.style.backgroundColor = '#f00'
+
+        // xxx.yyy 访问xxx对象下的yyy属性
+        // xxx.yyy() 访问xxx对象下的方法（函数）
+
+        // div元素 在 js 中它统称为对象，js中一切兼对象
+        console.log(typeof div)
+
+        imgList.appendChild(div)
+    </script>
+</body>
+</html>
