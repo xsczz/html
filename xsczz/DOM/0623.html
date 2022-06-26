@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+   
+    for(i = 0;i<4;i++) {
+      var div = document.createElement('div')
+      document.body.appendChild(div)
+    }
+    
+    var div = document.querySelector('div')
+    console.log(div)
+    // 删除先获取父元素
+    var bodyEle = document.querySelector('body')
+    console.log(bodyEle);
+    // 通过父元素移除元素
+    bodyEle.removeChild(div)
+  </script>
+</body>
+</html>
