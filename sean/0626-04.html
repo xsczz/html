@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        var app = document.querySelector('#app')
+
+        var data = [
+            {
+                text: '学习 JavaScript'
+            },
+            {
+                text: '学习 Vue'
+            },
+            {
+                text: '整个牛项目'
+            }
+        ]
+
+        var olEle = document.createElement('ol')
+
+        for (var i = 0; i < data.length; i++) {
+            var liEle = document.createElement('li')
+            liEle.innerHTML = data[i].text
+            olEle.appendChild(liEle)
+        }
+
+        app.appendChild(olEle)
+
+        // jquery require.js
+        // vue => react
+        // 表达提交
+        // nginx web 服务器的搭建
+        // js 发送网络请求
+    </script>
+</body>
+</html>

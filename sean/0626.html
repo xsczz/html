@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量作用域</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 页面级别的全局变量
+        var image = './images/avatar-4.jpeg'
+        console.log(image)
+
+        // 函数的定义
+        function createImage(scrImage) {
+            var ele = document.createElement('img')
+            ele.src = scrImage
+            document.body.appendChild(ele)
+        }
+
+        // 函数的调用
+        // createImage()
+        // console.log(image)
+        for (var i = 1; i < 16; i++) {
+            var img = './images/avatar-' + i + '.jpeg'
+            createImage(img)
+        }
+
+        // console.log(i)
+    </script>
+</body>
+</html>
