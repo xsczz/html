@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0622</title>
+</head>
+<style>
+  * {
+      margin: 0;
+      padding: 0;
+  }
+  body {
+      padding: 100px;
+  }
+  .swiper {
+      width: 800px;
+      height: 440px;
+      position: relative;
+  }
+  .swiper > .item {
+      width: 800px;
+      height: 440px;
+      overflow: hidden;
+      display: none;
+  }
+  .swiper > .item.active {
+      display: block;
+  }
+  .swiper > .item img {
+      width: 100%;
+      display: block;
+  }
+  .swiper .action {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+  }
+  .swiper .action li {
+      width: 20px;
+      height: 5px;
+      background-color: #fff;
+      list-style: none;
+      margin-left: 5px;
+      margin-right: 5px;
+      cursor: pointer;
+  }
+  .swiper .action li.active {
+      width: 40px;
+      background-color: #000;
+  }
+</style>
+<body>
+  <div class="swiper">
+    <div class="item"><img src="./img/1.jpeg"></div>
+    <div class="item"><img src="./img/2.jpeg"></div>
+    <div class="item"><img src="./img/3.jpeg"></div>
+    <div class="item"><img src="./img/4.jpeg"></div>
+  </div>
+  <script>
+    var swiper = document.querySelector('.swiper')
+    var item = document.querySelectorAll('.item') 
+    var ul = document.createElement('ul')    
+    swiper.appendChild(ul)
+    ul.className = 'action'
+    for(i = 0;i < item.length; i++) {
+      var li = document.createElement('li')
+      ul.appendChild(li)
+      if(i == 0) {
+        item[0].className = 'item active'
+        li.className = 'active'
+      }
+    
+      li.dataset.index = i
+      li.addEventListener('click',function(event){
+        var index = parseInt(event.target.dataset.index)
+        var lis = document.querySelectorAll('li')
+        for(n = 0;n<item.length;n++) {
+          if(index == n) {
+            item[n].className = 'item active'
+            lis[n].className = 'active'
+          } else {
+            item[n].className = 'item'
+            lis[n].className = ''
+          }
+        } 
+      })
+    }
+  </script>
+</body>
+</html>
