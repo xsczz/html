@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #f8f8f8;
+        }
+        .nav {
+            background-color: #ffffff;
+            padding: 20px;
+            width: 200px;
+        }
+        .nav ul li {
+            list-style: none;
+        }
+        .nav ul li div {
+            padding: 10px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .nav ul li ul {
+            display: none;
+        }
+        .nav ul li ul li a {
+            padding: 10px 10px 10px 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li>
+                <div>导航菜单1</div>
+                <ul>
+                    <li><a href="index-01.html">子菜单1</a></li>
+                    <li><a href="index-01.html">子菜单2</a></li>
+                    <li><a href="index-01.html">子菜单3</a></li>
+                    <li><a href="index-01.html">子菜单4</a></li>
+                </ul>
+            </li>
+            <li>
+                <div>导航菜单2</div>
+                <ul>
+                    <li><a href="index-01.html">子菜单1</a></li>
+                    <li><a href="index-01.html">子菜单2</a></li>
+                    <li><a href="index-01.html">子菜单3</a></li>
+                    <li><a href="index-01.html">子菜单4</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var li = document.querySelectorAll('.nav > ul > li')
+
+        console.log(li)
+
+        for (var i = 0; i < li.length; i++) {
+            li[i].addEventListener('click', (e) => {
+                var child = e.target.parentNode.children[1]
+                var display = child.style.display
+
+                if (!display || display === 'none') {
+                    child.style.display = 'block'
+                } else {
+                    child.style.display = 'none'
+                }
+            })
+        }
+    </script>
+</body>
+</html>

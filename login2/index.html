@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <style>
+        .tip {
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="" method="post" id="form">
+            <div>
+                <input type="text" name="account" id="account">
+            </div>
+            <div class="tip"></div>
+            <div>
+                <input type="password" name="password" id="password">
+            </div>
+            <div class="tip"></div>
+            <div>
+                <button>登录</button>
+            </div>
+        </form>
+    </div>
+    <h1 class="demo">哈哈哈，你好啊</h1>
+    <script>
+
+        /*
+            数据验证：
+            一、前端验证：提示，体验
+            二、后台验证：安全性、正确性（真实、有效）
+        */
+
+        var form = document.querySelector('#form')
+        var account = document.querySelector('#account')
+        var password = document.querySelector('#password')
+
+        var tip = document.querySelectorAll('.tip')
+        var demo = document.querySelector('.demo')
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault()
+            if (account.value.length != 11) {
+                tip[0].innerHTML = '手机号格式不对'
+                // return false 让表单提交不生效
+                return false
+            } else {
+                tip[0].innerHTML = ''
+            }
+
+            if (password.value.length < 8) {
+                tip[1].innerHTML = '密码不能小于8位'
+                return false
+            } else {
+                tip[1].innerHTML = ''
+            }
+
+            // 通过js BOM 来完成跳转
+            // setTimeout 延迟
+            setTimeout(function() {
+                window.location.href = 'console.html'
+            }, 3000)
+
+            return true
+        })
+
+        account.addEventListener('input', function() {
+            console.log('input')
+            tip[0].innerHTML = ''
+        })
+
+        password.addEventListener('input', function() {
+            tip[1].innerHTML = ''
+        })
+
+        /// 下面是次要的 ////////////////////////////////////////////////////////////
+
+        var n = 0
+
+        // 每隔一定时间执行一次 => 定时器
+        setInterval(function() {
+            n++
+            demo.innerHTML = getNowDateTime()
+            if (n % 2 == 0) {
+                demo.style.color = '#f00'
+            } else {
+                demo.style.color = '#00f'
+            }
+        }, 1000)
+
+        // 多少时间后执行一次
+        setTimeout(function() {
+            // window.location.href = 'console.html'
+        }, 3000)
+
+        function getNowDateTime() {
+            // JS 时间对象
+            var date = new Date()
+
+            // 提供了很多获取时间的方法
+            var year = date.getFullYear()
+            var month = date.getMonth() + 1
+            var day = date.getDate()
+            var hour = date.getHours()
+            var min = date.getMinutes()
+            var second  = date.getSeconds()
+
+            return year + '-' + month + '-' + day + ' ' + hour + ':' + min + ':' + second
+        }
+    </script>
+</body>
+</html>
