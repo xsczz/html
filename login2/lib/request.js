@@ -20,6 +20,8 @@ class Request {
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4) {
                 successCallback(xhr.responseText)
+            } else {
+                failCallback()
             }
         }
     
@@ -37,6 +39,8 @@ class Request {
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4) {
                 successCallback(xhr.responseText)
+            } else {
+                failCallback()
             }
         }
     
