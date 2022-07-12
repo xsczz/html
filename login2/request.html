@@ -13,12 +13,12 @@
 
         request.post('https://abx.im/app/login', {account: '15200001111', code: '1234'}, (response) => {
             var data = JSON.parse(response)
-            console.log(data.user)
-        })
+            console.log(data)
+        }, () => {})
 
         request.get('https://abx.im/cos/sign', {id: 1, user: 'test'}, (response) => {
             console.log(response)
-        })
+        }, () => {})
     </script>
 </body>
 </html>

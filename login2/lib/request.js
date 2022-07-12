@@ -1,7 +1,6 @@
 class Request {
 
     get(url, params = {}, successCallback, failCallback) {
-    
         var query = ''
     
         var i = 0
