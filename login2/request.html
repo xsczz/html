@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request</title>
+</head>
+<body>
+    <script src="./lib/request.js"></script>
+    <script>
+        var request = new Request()
+
+        request.post('https://abx.im/app/login', {account: '15200001111', code: '1234'}, (response) => {
+            var data = JSON.parse(response)
+            console.log(data.user)
+        })
+
+        request.get('https://abx.im/cos/sign', {id: 1, user: 'test'}, (response) => {
+            console.log(response)
+        })
+    </script>
+</body>
+</html>
