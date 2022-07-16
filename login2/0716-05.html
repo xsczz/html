@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            padding: 200px;
+        }
+        @keyframes toast {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            20% {
+                transform: translateY(100px);
+                opacity: 1;
+            }
+
+            80% {
+                transform: translateY(100px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+        }
+        .toast {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            opacity: 0;
+        }
+        .toast > div {
+            background-color: #000;
+            padding: 20px;
+            border-radius: 40px;
+            color: #fff;
+        }
+        .animate {
+            animation-name: toast;
+            animation-duration: 3s;
+            animation-timing-function: ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <button class="button">点我看看</button>
+    <script>
+        var button = document.querySelector('.button')
+
+        button.addEventListener('click', () => {
+            var ele = document.createElement('div')
+            ele.className = 'toast animate'
+            ele.innerHTML = '<div>欢迎来到我的世界，我很欢迎你👏🏻</div>'
+            document.body.appendChild(ele)
+
+            setTimeout(() => {
+                document.body.removeChild(ele)
+            }, 3000)
+        })
+    </script>
+</body>
+</html>

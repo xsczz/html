@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="toast.css">
+</head>
+<body>
+    <div class="login">
+        <form action="0326.html" id="form">
+            <div class="item">
+                <div class="icon">
+                    <img src="images/phone.svg">
+                </div>
+                <div class="content">
+                    <input placeholder="输入手机号" class="account">
+                </div>
+            </div>
+            <div class="item">
+                <div class="icon">
+                    <img src="images/password.svg">
+                </div>
+                <div class="content">
+                    <input type="password" placeholder="输入密码" class="password">
+                </div>
+            </div>
+            <div class="button">
+                <button>登录</button>
+            </div>
+        </form>
+    </div>
+    <script src="./request.js"></script>
+    <script src="./toast.js"></script>
+    <script>
+
+        var form = document.querySelector('#form')
+        var account = document.querySelector('.account')
+        var password = document.querySelector('.password')
+
+        var toast = new Toast()
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault()
+
+            if (account.value.length !== 11) {
+                toast.show('手机号格式不正确')
+                return false
+            }
+
+            if (password.value.length !== 4) {
+                toast.show('验证码格式错误')
+                return false
+            }
+            
+            // 跟服务器约定的数据格式
+            var data = {
+                account: account.value,
+                code: password.value
+            }
+
+            // 请求的数据格式 {"account":"15202478284","code":"8066"}
+            // 响应的数据格式（错误） {"code":1000,"message":"验证码错误"}
+            // 响应的数据格式 (正确) {"token":"HjMJ3m9CAjZbg6CQqKoEjlNKKRbB+qEFqDCAtmAJgrFzFx5WEDf9+8RhtOD+JuxN5vDF5robYTICv5CQGc2QHTz6IIlu2V6C1g==","user":{"id":1,"name":"陈朔","account":"15202478284","avatar":"https://dev-1255621558.cos.ap-chengdu.myqcloud.com/avatar-1.jpeg"}}
+
+            var request = new Request()
+            request.post('https://abx.im/app/login', data, (response) => {
+                var result = JSON.parse(response)
+                console.log('response', response)
+                // 成功的回调
+                if (result.code !== undefined && result.code > 0) {
+                    toast.show(result.message)
+                    return false
+                } else {
+                    window.location.href = 'console.html'
+                }
+            }, (statusCode) => {
+                // 失败的回调
+                if (statusCode == 404) {
+                    toast.show('请求的URL不存在')
+                } else {
+                    toast.show('服务发生了未知错误')
+                }
+            })
+        })
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Http Request</title>
+</head>
+<body>
+    <div class="tip">正在加载中...</div>
+    <script>
+
+        // HTTP 协议
+        // url => 请求地址
+        // method => 请求方法
+        // request header request body
+        // response header resppnse body
+
+        // 定义相关放 header
+        // 内容相关放 body
+
+        var tip = document.querySelector('.tip')
+        
+        var xhr = new XMLHttpRequest()
+        // 初始化一个请求
+        // method GET POST PUT DELETE OPTIONS ...
+        // url
+        // async
+        xhr.open('POST', 'https://abx.im/app/login', true)
+
+        // object
+        var data = {
+            account: '15211112222',
+            code: '1234'
+        }
+
+        // object => string
+        var json = JSON.stringify(data)
+
+        // 设置请求头
+        xhr.setRequestHeader('Content-Type', 'application/json')
+
+        // 请求发生变化的事件
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === xhr.DONE) {
+                if (xhr.status === 200) {
+                    // 请求结束而且请求正常的情况下才能拿到请求的结果
+                    var text = xhr.responseText
+                    // 将纯文本的json string 转成js的对象
+                    // string => object
+                    var obj = JSON.parse(text)
+                    tip.innerHTML = obj.message
+                } else if (xhr.status === 404) {
+                    tip.innerHTML = "请求的URL地址错误"
+                } else {
+                    tip.innerHTML = "网络发生错误"
+                }
+            } else {
+                tip.innerHTML = '发起请求异常'
+            }
+        }
+
+        xhr.send(json)
+    </script>
+</body>
+</html>

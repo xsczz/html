@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 动画</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 动画的定义 */
+        @keyframes animate {
+            0% {
+                background-color: #f00;
+            }
+            50% {
+                background-color: #00f;
+                transform: translate(100px, 100px);
+            }
+            80% {
+                background-color: #000;
+            }
+            100% {
+                background-color: #f00;
+            }
+        }
+        .box {
+            width: 400px;
+            height: 400px;
+            background-color: #f00;
+            color: #fff;
+        }
+        .animate {
+            /* 使用动画 */
+            animation-name: animate;
+            animation-duration: 3s;
+            animation-timing-function: cubic-bezier(0,.75, .95, .14);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>CSS3 可以创建动画，它可以取代许多网页动画图像、Flash 动画和 JavaScript 实现的效果。</p>
+    </div>
+
+    <script>
+        var box = document.querySelector('.box')
+        
+        box.addEventListener('click', () => {
+            box.className = 'box animate'
+            // 等动画执行完以后，重新初始化css样式
+            setTimeout(() => {
+                box.className = 'box'
+            }, 3000)
+        })
+    </script>
+</body>
+</html>
